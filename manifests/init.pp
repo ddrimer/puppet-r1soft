@@ -25,8 +25,8 @@ class r1soft {
           src => false,
         },
         key      => {
-          id      => '66BD1D82',
-          source  => 'http://repo.r1soft.com/r1soft.asc',
+          id     => '66BD1D82',
+          source => 'http://repo.r1soft.com/r1soft.asc',
         },
       }
       # Set the right java package, this can be used later on with java_ks
