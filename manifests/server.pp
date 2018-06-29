@@ -58,9 +58,9 @@ class r1soft::server(
   }
 
   # set up our configurations
-  # Deprecated since 0.1.8, will be removed in 0.2.0
+  # Deprecated since 0.1.8, will be removed in 1.2.0
   if $manage_properties_templates {
-    notify { 'manage_properties_templates is deprecated and will be removed in 0.2.0. Please use r1soft::config instead.': }
+    notify { 'manage_properties_templates is deprecated and will be removed in 1.2.0. Please use r1soft::config instead.': }
 
     file { '/usr/sbin/r1soft/conf/server.properties':
       ensure  => present,
