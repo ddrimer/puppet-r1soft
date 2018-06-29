@@ -36,6 +36,9 @@ describe 'r1soft::server' do
           it { is_expected.to contain_file('/usr/sbin/r1soft/conf/web.properties') }
           it { is_expected.to contain_file('/usr/sbin/r1soft/conf/web.properties').that_requires('Package[serverbackup-enterprise]') }
 
+          it { is_expected.to contain_file('/usr/sbin/r1soft/conf/api.properties') }
+          it { is_expected.to contain_file('/usr/sbin/r1soft/conf/api.properties').that_requires('Package[serverbackup-enterprise]') }
+
           it { is_expected.to contain_file('/usr/sbin/r1soft/data/') }
           it { is_expected.to contain_file('/usr/sbin/r1soft/data/').with_ensure('directory') }
           it { is_expected.to contain_file('/usr/sbin/r1soft/data/').that_requires('Package[serverbackup-enterprise]') }
