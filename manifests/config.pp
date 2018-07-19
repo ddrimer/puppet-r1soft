@@ -1,5 +1,5 @@
 # r1soft::config
-define r1soft::config($ensure = 'present', $value = '', $target = 'server') {
+define r1soft::config($ensure = 'present', $value = '', $target = 'server', $prop = $title,) {
   # Tests
   if $value == '' {
     fail('value can\'t be empty')
@@ -32,11 +32,11 @@ define r1soft::config($ensure = 'present', $value = '', $target = 'server') {
   }
 
   # Change the configuration file and reload the service
-  file_line { "r1soft-config-set-${target}-${title}":
+  file_line { "r1soft-config-set-${target}-${prop}":
     ensure  => $ensure,
     path    => $config,
-    line    => "${title}=${value}",
-    match   => "^${title}=",
+    line    => "${prop}=${value}",
+    match   => "^${prop}=",
     require => Package[$package],
     notify  => Service[$service],
   }
